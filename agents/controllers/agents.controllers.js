@@ -13,3 +13,9 @@ exports.insert = (req, res) => {
     res.status(201).send({ id: result.id });
   });
 };
+
+exports.getById = (req, res) => {
+  AgentModel.findById(req.params.agentId).then((result) => {
+    res.status(200).send(result);
+  });
+};

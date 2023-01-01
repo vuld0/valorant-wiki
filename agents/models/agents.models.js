@@ -17,3 +17,9 @@ exports.createAgent = (agentData) => {
   const agent = new Agent(agentData);
   return agent.save();
 };
+
+exports.findById = (id) =>
+  Agent.findById(id).then((res) => {
+    const result = res.toJSON();
+    return result;
+  });
